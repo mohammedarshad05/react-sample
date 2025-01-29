@@ -1,6 +1,6 @@
 
 import './App.css'
-import CourseList from './components/CourseList'
+import Table from './components/Table';
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
     <header>
       <h1></h1>
     </header>
-    <CourseList/>
+    <Table/>
   </>
 );
 }
