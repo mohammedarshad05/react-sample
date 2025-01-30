@@ -1,6 +1,7 @@
 
 import './App.css'
-import Table from './components/Table';
+import Products from './components/Products';
+import CarTable from './components/CarTable';
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
     <header>
       <h1></h1>
     </header>
-    <Table/>
+    <Products/>
   </>
 );
 }
