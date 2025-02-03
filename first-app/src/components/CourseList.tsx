@@ -1,19 +1,24 @@
-function CourseList() {
-  const courses = [
-    "Advanced Web Design",
-    "React Frontend",
-    "Core Java",
-    "Advanced Excel",
-    "Python Data Science",
-    "Backend using Java and Spring Boot",
-    "PHP Laravel",
-  ];
-  return (
+import Course from "../Models/course";
+interface CourseProps{
+  CourseList: Course[];
+}
+const CourseList = (props:CourseProps)=>{
+  if (props.CourseList.length == 0 ){
+    return (
     <div>
      <h2 className="text-primary">Course List</h2>
+     <h6 className="text-denger"> No course Available</h6>
+   </div>
+    );
+}
+  return (
+    <div>
+      <h2 className="text-danger">course list</h2>
       <ul className="list-group">
-        {courses.map((course) => (
-          <li className="list-group-item">{course}</li>
+        {props.CourseList.map((course)=>(
+          <li className="list-group-item" key={course.id}>
+            {course.title}-{course.duration}-{course.description}
+          </li>
         ))}
       </ul>
     </div>
