@@ -1,17 +1,8 @@
-
 header {
-  background-color: #4caf50;
+  background-color: #0f4084;
   color: white;
   padding: 2rem;
 }
 h1 {
   text-align: center;
-}
-.App{
-  display: flex;
-  justify-content: center;
-}
-.container {
-  width: 80%;
-  margin: 0 auto;
 }

@@ -9,6 +9,11 @@ import fetchProduct from "./components/Services/ProductServices";
 import fetchCar from "./components/Services/CarServices";
 import AdvanceCars from "./components/AdvanceCars";
 import fetchCourse from "./components/Services/courseservices";
+import Toggle from "./components/Toggle";
+import UserName from "./components/UserName";
+import NameInput from "./components/NameInput";
+import Greeting from "./components/Greeting";
+import Counter from "./components/counter";
 
 
 
@@ -69,11 +74,22 @@ import fetchCourse from "./components/Services/courseservices";
   function App() {
    
     return (
-      <div className="App">
-          <h1>cars List</h1>
-          {/* < AdvanceCars carslist={fetchCar()} /> */}
-          <AdvanceCars carslist={fetchCar()} />
+      <div>
+      <header>
+         <div className="App">
+          <h1>React Demo </h1>
       </div>
+          </header>
+          {/* < AdvanceCars carslist={fetchCar()} /> */}
+          {/* <AdvanceCars carslist={fetchCar()} /> */}
+          {/* <Toggle/> */}
+          {/* <UserName/> */}
+          {/* <UserName/> */}
+          
+          {/* <Greeting> Hello world </Greeting> */}
+          <Counter/>
+          </div>
+     
   );
 }
 
