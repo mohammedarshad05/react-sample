@@ -1,20 +1,9 @@
 import Article from "./Articles";
-const ArticleList = () => {
-    const articles = [
-      {
-        title: "📜 React Basics",
-        body: "🔹 React is a JavaScript library for building UIs.",
-      },
-      {
-        title: "📜 Understanding Props",
-        body: "🔹 Props allow components to receive data from their parent.",
-      },
-      {
-        title: "📜 What is Bootstrap?",
-        body: "🔹 Bootstrap is a CSS framework that helps in designing responsive websites.",
-      },
-    ];
-  
+import fetchArticles from "../Services/ArticleServices";
+import "./Article.css";
+
+function ArticleList() {
+    const articles = fetchArticles();
     return (
       <div className="container">
         {articles.map((article) => (

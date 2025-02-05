@@ -16,6 +16,7 @@ import Greeting from "./components/Greeting";
 import Counter from "./components/counter";
 import Articles from "./components/Articles";
 import ArticleList from "./components/ArticleList";
+import UserList from "./components/UserList";
 
 
 
@@ -92,7 +93,7 @@ import ArticleList from "./components/ArticleList";
           {/* <Greeting> Hello world </Greeting> */}
           {/* <Counter/> */}
           {/* <Articles>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates cum neque distinctio maxime libero ab cumque consectetur eveniet, quas atque voluptatem et reprehenderit quasi, nobis repellendus quae? Tempora, eaque explicabo.</Articles> */}
-          <ArticleList/>
+          <UserList/>
           </div>
      
   );
