@@ -15,7 +15,8 @@ function UserList(){
     };
     useEffect (() =>{
         fetchUsers();
-    });
+    },[]);
+
     return (
             <ul className="list-group"> 
             {users.map((user)=>(
