@@ -12,8 +12,6 @@ function Home(){
                     <h2>About Our React App</h2>
                     <p>Our React app is designed to provide a seamless user experience with the latest in web technology. It offers robust performance, dynamic content, and an intuitive interface.</p>
                 </div>
-                <div className="col-lg-6">
-                </div>
             </div>
         </div>
 

@@ -25,6 +25,8 @@ import About from "./components/AboutUs";
 import PostList from "./components/PostList";
 import PostDetails from "./components/PostDetails";
 import PostSearchTerm from "./components/PostSearchTerm";
+import Courses from "./components/Courses";
+import AddCourse from "./components/AddCourse";
 
 // function App() {
 //   const Bikes = ["Honda", "Yamaha", "Suzuki", "Kawasaki", "BMW"];
@@ -138,10 +140,13 @@ function App() {
         <Link  className="nav-link active" to="/posts" >postslist </Link>
         </li>
         <li className="nav-item">
-        <Link  className="nav-link active" to="/products" >productslist </Link>
+        <Link  className="nav-link active" to="/products/:id" >productslist </Link>
         </li>
         <li className="nav-item">
-        <Link  className="nav-link active" to="/Recipe" >Recipelist </Link>
+        <Link  className="nav-link active" to="/Recipe" >recipelist </Link>
+        </li>
+        <li className="nav-item">
+        <Link  className="nav-link active" to="/courses" >courses </Link>
         </li>
         {/* <li className="nav-item"> */}
         {/* <Link  className="nav-link active" to="/posts-search" >search Us </Link>
@@ -156,8 +161,11 @@ function App() {
 <Route path="/posts" element={<PostList/>} />
 <Route path="/posts-search" element={<PostSearchTerm />} />
 <Route path="/posts/:id" element={<PostDetails />} />
-<Route path="/products/" element={<ProductList />} />
+<Route path="/products/:id" element={<ProductList />} />
 <Route path="/Recipe/" element={<RecipeList />} />
+<Route path="/courses" element={<Courses />} />
+<Route path="/add-course" element={<AddCourse />} />
+
 </Routes>
 </Router>
   );
