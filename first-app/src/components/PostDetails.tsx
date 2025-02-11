@@ -42,7 +42,7 @@ interface Post {
         <p>
           <b>👤 User ID:</b> {post.userId}
         </p>
-        <Link to="/" className="btn btn-primary">
+        <Link to="/posts" className="btn btn-primary">
           ← Back to Posts
         </Link>
       </div>
