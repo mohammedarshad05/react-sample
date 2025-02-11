@@ -38,7 +38,7 @@ const ProductList: React.FC = () => {
         <input
           type="text"
           className="form-control w-50"
-          placeholder="Ex: Red nail polish etc.."
+          placeholder="🔎 seach your product..."
           value={searchProduct}
           onChange={(e) => setSearchProduct(e.target.value)}
         />

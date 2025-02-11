@@ -1,19 +1,33 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
-const AddCourse: React.FC = () => {
-  const API_URL = "https://67a97dcf6e9548e44fc3c5fa.mockapi.io/courses";
+const EditCourse: React.FC = () => {
+
+  const { id } = useParams<{ id: string }>();
+
+
+  const API_URL = `https://67a97dcf6e9548e44fc3c5fa.mockapi.io/courses/${id}`;
   const [title, setTitle] = useState("");
   const [titleError, setTitleError] = useState("");
   const [descriptionError, setDescriptionError] = useState("");
   const [description, setDescription] = useState("");
-  const [duration, setDuration] = useState("");
-  const [fees, setFees] = useState("");
   const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    const fetchCourse = async () => {
+      const response = await fetch(API_URL);
+      const data = await response.json();
+      setTitle(data.title);
+      setDescription(data.description);
+    };
+
+    fetchCourse();
+  }, [API_URL]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (isFormValid()) {
-      addCourse();
+      updateCourse();
       setMessage("");
     } else {
       setMessage("Please fill all the fields");
@@ -23,14 +37,14 @@ const AddCourse: React.FC = () => {
   const isFormValid = () => {
     let ValidForm: boolean = true;
 
-    if (title.trim() == "") {
+    if (title.trim() === "") {
       setTitleError("Please enter a title");
       ValidForm = false;
     } else {
       setTitleError("");
     }
 
-    if (description.trim().length == 0) {
+    if (description.trim().length === 0) {
       setDescriptionError("Please enter a description");
       ValidForm = false;
     } else {
@@ -39,41 +53,30 @@ const AddCourse: React.FC = () => {
     return ValidForm;
   };
 
-  const addCourse = async () => {
-    let requestBody = { title, description, duration, fees };
+  const updateCourse = async () => {
+    let requestBody = { title, description };
     let requestBodyJSON = JSON.stringify(requestBody);
 
     const request = {
-      method: "POST",
+      method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: requestBodyJSON,
     };
 
     const response = await fetch(API_URL, request);
     if (response.ok) {
-      console.log("Course  added ...");
+      console.log("Course updated ...");
       const data = await response.json();
       console.log(data);
-      setMessage("Course added successfully");
-      setTitle("");
-      setDescription("");
+      setMessage("Course updated successfully");
     } else {
-      setMessage("Error while adding course");
+      setMessage("Error while updating course");
     }
   };
 
-  //  setMessage ("Course added");
-
   return (
-    <div>
-      {message ? (
-        <div className="alert alert-success" role="alert">
-          {message}
-        </div>
-      ) : (
-        <div></div>
-      )}
-      <h2>Add Course</h2>
+    <div className="container mt-4">
+      <h2>✍️ Edit Course</h2>
       <form className="border p-3 shadow-lg rounded" onSubmit={handleSubmit}>
         <div>
           <div className="mb-2">
@@ -113,45 +116,12 @@ const AddCourse: React.FC = () => {
             <p></p>
           )}
         </div>
-        <div className="mb-2">
-          <label htmlFor="durationTextBox" className="text-secondary">
-            Duration
-          </label>
-        </div>
-        <div>
-          <input
-            type="text"
-            id="durationTextBox"
-            value={duration}
-            className="form-control mb-4"
-            placeholder="Enter Course Duration"
-            onChange={(e) => setDuration(e.target.value)}
-          />
-        </div>
-        <div className="mb-2">
-          <label htmlFor="feesTextBox" className="text-secondary">
-            fees
-          </label>
-        </div>
-        <div>
-          <input
-            type="text"
-            id="feesTextBox"
-            value={fees}
-            className="form-control mb-4"
-            placeholder="Enter Course Fees"
-            onChange={(e) => setFees(e.target.value)}
-          />
-        </div>
-
-        <div>
-          <button type="submit" className="btn btn-success">
-            Submit
-          </button>
-        </div>
+        <button type="submit" className="btn btn-primary">
+          Update Course
+        </button>
       </form>
     </div>
   );
 };
 
-export default AddCourse;
+export default EditCourse;

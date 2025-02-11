@@ -28,6 +28,7 @@ import PostSearchTerm from "./components/PostSearchTerm";
 import Courses from "./components/Courses";
 import AddCourse from "./components/AddCourse";
 import ProductDetails from "./components/ProductDetails";
+import EditCourse from "./components/EditCourse";
 
 // function App() {
 //   const Bikes = ["Honda", "Yamaha", "Suzuki", "Kawasaki", "BMW"];
@@ -167,6 +168,7 @@ function App() {
 <Route path="/Recipe/" element={<RecipeList />} />
 <Route path="/courses" element={<Courses />} />
 <Route path="/add-course" element={<AddCourse />} />
+<Route path="/edit-course" element={<EditCourse />} />
 
 </Routes>
 </Router>

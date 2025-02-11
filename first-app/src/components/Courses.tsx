@@ -50,7 +50,7 @@ function Courses(){
             `}
         </style>
         <div>
-            <Link to="/add-course" className="btn btn-outline-success mb-3">➕ Add Course</Link>
+            <Link to="/add-course" className="btn btn-outline-success mb-3">➕ Add Course</Link> | <Link to="/edit-course" className="btn btn-outline-primary mb-3">✍️ Edit Course</Link>
         </div>
         <h2>Course List</h2>
         <div className="row">
