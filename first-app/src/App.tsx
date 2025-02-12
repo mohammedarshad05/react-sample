@@ -168,7 +168,7 @@ function App() {
 <Route path="/Recipe/" element={<RecipeList />} />
 <Route path="/courses" element={<Courses />} />
 <Route path="/add-course" element={<AddCourse />} />
-<Route path="/edit-course" element={<EditCourse />} />
+<Route path="/edit-course/:id" element={<EditCourse />} />
 
 </Routes>
 </Router>

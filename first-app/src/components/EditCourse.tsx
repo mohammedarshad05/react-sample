@@ -119,6 +119,9 @@ const EditCourse: React.FC = () => {
         <button type="submit" className="btn btn-primary">
           Update Course
         </button>
+        <button type="submit" className="btn btn-danger">
+          cancel
+        </button>
       </form>
     </div>
   );
